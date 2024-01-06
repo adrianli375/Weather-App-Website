@@ -1,0 +1,302 @@
+/* COMP3322 Assignment 2 */
+
+* {
+    font-family: Verdana;
+}
+
+body {
+    padding: 2.5% 5% 2.5% 5%;
+}
+
+.currentWeather, #humidity, .rainfall, #uvindex, #aqhi, .selectWeather {
+    display: flex;
+}
+
+.currentWeather {
+    height: 30%;
+    justify-content: space-between;
+}
+
+#headerweather {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+#headerBlock {
+    background-image: url('images/blue-sky.jpg');
+    background-color: #fce5dc;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+}
+
+#myDataWeather {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-left: 7.5%;
+    padding-right: 7.5%;
+}
+
+#headerBlockLastRow {
+    display: flex;
+    position: absolute;
+    width: 97%;
+    height: fit-content;
+    bottom: 0;
+}
+
+.currentWeather > div {
+    width: 45%;
+    margin-left: 1%;
+    margin-right: 1%;
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-bottom: 1%;
+    margin-bottom: 2%;
+    display: flex;
+    flex-direction: column;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+}
+
+#headerBlock > p {
+    font-size: 1.5rem;
+}
+
+#headerweather > * {
+    /* width: 20%;
+    height: 20%; */
+    padding: 10px;
+    position: relative;
+}
+
+#myDataWeather > * {
+    padding: 0.5rem;
+}
+
+#myDataWeather.temperature, #myDataWeather.aqhi {
+    width: 30%;
+    height: 30%;
+    position: relative;
+}
+
+#myDataWeather.rainfall {
+    width: 32%;
+    height: 32%;
+}
+
+.degree, #humidityValue, .rainfallValue, #uvIndexValue {
+    font-size: 3.5rem;
+}
+
+#weatherIcon {
+    width: 5rem;
+    height: 5rem;
+    aspect-ratio: 1 / 1;
+}
+
+.celsius {
+    vertical-align: top;
+}
+
+#rainDropImg {
+    width: 2rem;
+    aspect-ratio: 1 / 1;
+}
+
+#headerBlockUmbrella {
+    width: 35px;
+    aspect-ratio: 1 / 1;
+}
+
+#myDataBlockUmbrella {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+}
+
+#uvImg {
+    width: 2rem;
+    height: 2rem;
+    vertical-align: top;
+}
+
+#warningsButton {
+    background-color: #f64b4b;
+    display: inline-block;
+    width: auto;
+    z-index: 2;
+}
+
+#warningsButton > span {
+    font-size: 1rem;
+}
+
+#warningsButton > p {
+    font-style: italic;
+}
+
+#warningsMessage {
+    margin-block: 0;
+}
+
+#lastUpdate {
+    right: 0;
+    bottom: 0;
+    position: absolute;
+}
+
+#myDataBlock {
+    background-color: #e5f8e5;
+}
+
+.shadow {
+    box-shadow: 3px 3px #bdbabd;
+}
+
+#humidityRight, #rainfallRight, #myRainfallRight, #aqhiData {
+    display: flex;
+    flex-direction: column;
+}
+
+#aqhiData {
+    margin-left: 8%;
+    min-width: 40%;
+}
+
+#aqhiValue {
+    font-size: 2.5rem;
+}
+
+.bottomAlign {
+    vertical-align: bottom;
+}
+
+.selectWeather > div {
+    width: 30%;
+    margin-left: 1%;
+    margin-right: 1%;
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-bottom: 1%;
+    margin-bottom: 2%;
+}
+
+select {
+    width: 70%;
+}
+
+#selectTemperature {
+    background-color: #c1d4e5;
+}
+
+#selectRainfall {
+    background-color: #e5e0b1;
+}
+
+#selectAirQuality {
+    background-color: #908f8f;
+}
+
+select + div {
+    padding-top: 5%;
+    height: 20%;
+}
+
+.forecastWeather {
+    background-color: #f2dcee;
+    height: 10%;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+.forecastWeather > p {
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 2%;
+}
+
+#weatherForecasts {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    overflow: scroll;
+}
+
+.forecast {
+    min-width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.forecast > img {
+    justify-content: center;
+}
+
+.forecastWeatherImg {
+    width: 70%;
+    aspect-ratio: 1 / 1;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+.PSR {
+    width: 70%;
+    aspect-ratio: 1 / 1;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+.forecast > p {
+    margin-block-start: 0.3rem;
+    margin-block-end: 0.3rem;
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+@media screen and (max-width: 500px) {
+    .currentWeather, .selectWeather {
+        flex-direction: column;
+    }
+
+    .currentWeather > div, .selectWeather > div, .forecastWeather {
+        width: 100%;
+    }
+
+    .toggle {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 700px) and (min-width: 501px) {
+    .currentWeather {
+        flex-direction: column;
+    }
+
+    .currentWeather, .currentWeather > div, .selectWeather, .forecastWeather {
+        width: 100%;
+    }
+
+    #myDataBlock > p.subtitle {
+        font-size: 1.5rem;
+    }
+
+    .toggle > p {
+        font-size: 0.7rem;
+    }
+    
+    div > p.subtitle {
+        font-size: 1.2rem;
+    }
+}
